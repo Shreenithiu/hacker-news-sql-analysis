@@ -1,59 +1,37 @@
-# Findings and Insights
+# Findings
 
-## 1. Top Stories Analysis
+## Top Stories
 
-The highest-scoring stories were identified by ordering stories based on their score. This highlights the type of content that generated the most community engagement.
+Retrieved the five highest-scoring stories from the Hacker News dataset.
 
----
+## User Score Analysis
 
-## 2. User Contribution Analysis
+Calculated the total score across all stories and identified users whose combined scores exceeded 200 points.
 
-The total score across all stories was calculated and compared against scores accumulated by high-performing users.
+## Percentage Contribution
 
-A small group of users contributed a significant percentage of the total platform score, supporting the 1-9-90 participation rule commonly observed in online communities.
+Calculated the percentage contribution of selected high-scoring users relative to the total score.
 
----
+## Rickroll URL Analysis
 
-## 3. Rickroll Detection
+Identified users who posted the Rickroll YouTube link and counted the number of times it was posted by each user.
 
-A query was performed to identify users repeatedly posting the same YouTube Rickroll URL.
+## Source Categorization
 
-This analysis demonstrates how SQL can be used for basic spam detection and user behavior monitoring.
+Grouped stories into the following categories based on their URLs:
 
----
+* GitHub
+* Medium
+* New York Times
+* Other
 
-## 4. Source Categorization
+Counted the number of stories in each category.
 
-Stories were grouped into categories based on their URLs.
+## Time-Based Analysis
 
-Categories included:
+Examined story activity by extracting the hour from each timestamp using the STRFTIME() function.
 
-- GitHub
-- Medium
-- New York Times
-- Other
+Calculated:
 
-This helped determine which external websites contributed the largest amount of content to Hacker News.
-
----
-
-## 5. Best Time to Post
-
-Timestamp data was analyzed using SQLite's STRFTIME() function.
-
-Average scores were calculated for each hour of the day.
-
-The results suggest that posting time may influence story visibility and engagement levels.
-
----
-
-## Conclusion
-
-Using SQL, this project explored user behavior, content trends, and engagement patterns within the Hacker News platform.
-
-The analysis demonstrates practical use of SQL for:
-
-- Data exploration
-- Aggregation
-- Pattern detection
-- Business insight generation
+* Average score by hour
+* Number of stories by hour
