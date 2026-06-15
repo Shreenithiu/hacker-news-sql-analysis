@@ -1,4 +1,5 @@
--- Task 1: Find the Top 5 Stories with the Highest Scores
+-- Task 1
+-- Find the most popular Hacker News stories.
 
 SELECT title, score
 FROM hacker_news
@@ -6,13 +7,16 @@ ORDER BY score DESC
 LIMIT 5;
 
 
--- Task 2: Find the Total Score of All Stories
+-- Task 2
+-- Recent studies have found that online forums tend to be dominated by a small percentage of their users (1-9-90 Rule).
+-- First, find the total score of all the stories.
 
-SELECT SUM(score) AS total_score
-FROM hacker_news;
+SELECT SUM(score) AS total_score FROM hacker_news;
 
 
--- Task 3: Find Users with Combined Scores Greater Than 200
+-- Task 3
+-- Find the individual users who have gotten combined scores of more than 200,
+-- and their combined scores.
 
 SELECT user, SUM(score) as total_score
 FROM hacker_news
@@ -21,12 +25,16 @@ HAVING SUM(score) > 200
 ORDER BY total_score DESC;
 
 
--- Task 4: Calculate the Fraction of Total Score Contributed by Top Users
+-- Task 4
+-- Add these users’ scores together and divide by the total
+-- to get the percentage.
 
 SELECT (517+309+304+282)/6366.0 AS Fraction;
 
 
--- Task 5: Find Users Who Posted the Rickroll Link
+-- Task 5
+-- Some users are rickrolling by posting the same YouTube link.
+-- Find how many times each offending user posted this link.
 
 SELECT user, count(*) AS Links
 FROM hacker_news
@@ -34,7 +42,9 @@ WHERE url LIKE 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 GROUP BY user;
 
 
--- Task 6 & 7: Categorize Stories by Source and Count Stories from Each Source
+-- Task 6 & 7
+-- Categorize each story based on its source.
+-- Count the number of stories from each source.
 
 SELECT CASE
    WHEN url LIKE '%github.com%' THEN 'GitHub'
@@ -47,22 +57,24 @@ FROM hacker_news
 GROUP BY Source;
 
 
--- Task 8: View Timestamp Data
+-- Task 8
+-- Examine the timestamp column and its format.
 
 SELECT timestamp
 FROM hacker_news
 LIMIT 10;
 
 
--- Task 9: Extract the Hour from the Timestamp
+-- Task 9
+-- Use the STRFTIME() function to extract the hour
+-- from the timestamp.
 
-SELECT STRFTIME('%H', timestamp) as hour, avg(score)
+SELECT STRFTIME ('%H', timestamp) as hour,avg(score)
 FROM hacker_news
 GROUP BY hour
-ORDER BY avg(score) DESC;
+ORDER BY avg(score)desc;
 
-
--- Additional Exploration of STRFTIME()
+-- Test how STRFTIME() works on the timestamp column.
 
 SELECT timestamp,
    strftime('%H', timestamp)
@@ -71,7 +83,10 @@ GROUP BY 1
 LIMIT 20;
 
 
--- Task 10 & 11: Find Average Score and Story Count by Hour
+-- Task 10 & 11
+-- Return the hour, average score, and count of stories.
+-- Round the average score, rename the columns,
+-- and filter out NULL timestamps.
 
 SELECT strftime('%H',timestamp) as hour,
 round(avg(score)) as avg_score,
@@ -79,4 +94,4 @@ count (*) as story
 FROM hacker_news
 WHERE timestamp IS NOT NULL
 GROUP BY hour
-ORDER BY avg(score) DESC;
+ORDER BY avg(score) desc;
