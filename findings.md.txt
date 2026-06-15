@@ -1,0 +1,59 @@
+# Findings and Insights
+
+## 1. Top Stories Analysis
+
+The highest-scoring stories were identified by ordering stories based on their score. This highlights the type of content that generated the most community engagement.
+
+---
+
+## 2. User Contribution Analysis
+
+The total score across all stories was calculated and compared against scores accumulated by high-performing users.
+
+A small group of users contributed a significant percentage of the total platform score, supporting the 1-9-90 participation rule commonly observed in online communities.
+
+---
+
+## 3. Rickroll Detection
+
+A query was performed to identify users repeatedly posting the same YouTube Rickroll URL.
+
+This analysis demonstrates how SQL can be used for basic spam detection and user behavior monitoring.
+
+---
+
+## 4. Source Categorization
+
+Stories were grouped into categories based on their URLs.
+
+Categories included:
+
+- GitHub
+- Medium
+- New York Times
+- Other
+
+This helped determine which external websites contributed the largest amount of content to Hacker News.
+
+---
+
+## 5. Best Time to Post
+
+Timestamp data was analyzed using SQLite's STRFTIME() function.
+
+Average scores were calculated for each hour of the day.
+
+The results suggest that posting time may influence story visibility and engagement levels.
+
+---
+
+## Conclusion
+
+Using SQL, this project explored user behavior, content trends, and engagement patterns within the Hacker News platform.
+
+The analysis demonstrates practical use of SQL for:
+
+- Data exploration
+- Aggregation
+- Pattern detection
+- Business insight generation
