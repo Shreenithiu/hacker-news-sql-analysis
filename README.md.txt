@@ -2,62 +2,51 @@
 
 ## Project Overview
 
-This project analyzes data from Hacker News, a popular technology-focused community platform. The dataset contains information about stories, users, scores, timestamps, and URLs.
+This project analyzes data from the Hacker News platform using SQL. The dataset contains information about stories, users, scores, timestamps, and URLs.
 
-The objective of this project is to identify user engagement patterns, content source trends, and optimal posting times using SQL.
+The analysis was performed as part of the Codecademy SQL learning path.
 
-## Dataset
+## Dataset Columns
 
-The dataset contains the following fields:
+* title
+* user
+* score
+* timestamp
+* url
 
-- title
-- user
-- score
-- timestamp
-- url
+## Tasks Performed
 
-## Objectives
+1. Retrieved the top 5 stories with the highest scores.
+2. Calculated the total score of all stories.
+3. Identified users with combined scores greater than 200.
+4. Calculated the percentage contribution of high-scoring users.
+5. Counted the number of times users posted the Rickroll URL.
+6. Categorized stories based on their source website.
+7. Counted the number of stories from each source category.
+8. Examined the timestamp format.
+9. Used the STRFTIME() function to extract hours from timestamps.
+10. Calculated the average score and story count for each hour.
+11. Identified hours with the highest average story scores.
 
-- Identify the highest-scoring stories
-- Analyze score distribution among users
-- Detect repeated spam/Rickroll links
-- Compare popular content sources
-- Determine the best time to post stories
+## SQL Concepts Used
 
-## SQL Skills Demonstrated
+* SELECT
+* ORDER BY
+* LIMIT
+* WHERE
+* GROUP BY
+* HAVING
+* SUM()
+* COUNT()
+* AVG()
+* ROUND()
+* CASE
+* STRFTIME()
 
-- SELECT
-- WHERE
-- ORDER BY
-- GROUP BY
-- HAVING
-- Aggregate Functions
-  - COUNT()
-  - SUM()
-  - AVG()
-- CASE Statements
-- Date & Time Functions
-  - STRFTIME()
-- Data Aggregation
+## Files
 
-## Key Findings
-
-### User Contribution Analysis
-A small percentage of users contributed a significant portion of the overall platform score, supporting the 1-9-90 participation rule commonly observed in online communities.
-
-### Content Source Analysis
-GitHub, Medium, and New York Times were among the most frequently shared content sources.
-
-### Spam Link Detection
-Several users repeatedly posted the same YouTube Rickroll link.
-
-### Posting Time Analysis
-Story engagement varied throughout the day, with certain hours producing higher average scores.
-
-## Project Files
-
-- hacker_news_queries.sql
-- findings.md
+* hacker_news_queries.sql
+* findings.md
 
 ## Project Source
 
