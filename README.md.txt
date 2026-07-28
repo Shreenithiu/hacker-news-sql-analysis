@@ -1,12 +1,12 @@
-# Hacker News Trend Analysis using SQL
+Hacker News Trend Analysis using SQL
 
-## Project Overview
+Project Overview
 
 This project analyzes data from the Hacker News platform using SQL. The dataset contains information about stories, users, scores, timestamps, and URLs.
 
 The analysis was performed as part of the Codecademy SQL learning path.
 
-## Dataset Columns
+Dataset Columns
 
 * title
 * user
@@ -14,7 +14,7 @@ The analysis was performed as part of the Codecademy SQL learning path.
 * timestamp
 * url
 
-## Tasks Performed
+Tasks Performed
 
 1. Retrieved the top 5 stories with the highest scores.
 2. Calculated the total score of all stories.
@@ -28,7 +28,7 @@ The analysis was performed as part of the Codecademy SQL learning path.
 10. Calculated the average score and story count for each hour.
 11. Identified hours with the highest average story scores.
 
-## SQL Concepts Used
+SQL Concepts Used
 
 * SELECT
 * ORDER BY
@@ -43,11 +43,11 @@ The analysis was performed as part of the Codecademy SQL learning path.
 * CASE
 * STRFTIME()
 
-## Files
+Files
 
 * hacker_news_queries.sql
 * findings.md
 
-## Project Source
+Project Source
 
 Completed as part of the Codecademy SQL learning path.
